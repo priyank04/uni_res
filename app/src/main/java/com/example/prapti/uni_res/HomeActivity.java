@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity   {
     }
     private void signOut() {
 
-            mAuth.signOut();
+             mAuth.signOut();
             mGoogleSignInClient.signOut().addOnCompleteListener(this,
                     new OnCompleteListener<Void>() {
                         @Override
