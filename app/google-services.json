@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "986785659330",
+    "firebase_url": "https://uni-res.firebaseio.com",
+    "project_id": "uni-res",
+    "storage_bucket": "uni-res.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986785659330:android:f6f0cb944ac90e2b",
+        "android_client_info": {
+          "package_name": "com.example.prapti.uni_res"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986785659330-5ekh81jgr6ilbdfa13b81gtm7rtc3qv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prapti.uni_res",
+            "certificate_hash": "58b595625b9bf663fae4ff3ec3009a11dd77415c"
+          }
+        },
+        {
+          "client_id": "986785659330-89021pceg6s4agbden5plv427hehh3db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDedatWY5ttrYHlYjZuZWITzZroWw9mQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986785659330-89021pceg6s4agbden5plv427hehh3db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
