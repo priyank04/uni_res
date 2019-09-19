@@ -21,12 +21,19 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -35,6 +42,7 @@ public class MainActivity extends AppCompatActivity  {
     private static final String TAG = "Uni_Res";
 
     GoogleSignInClient mGoogleSignInClient;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     FirebaseAuth mAuth;
 
@@ -129,7 +137,7 @@ public class MainActivity extends AppCompatActivity  {
     //this method is called on click
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-
+        addUserData();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     private void gotoProfile(){
@@ -139,5 +147,27 @@ public class MainActivity extends AppCompatActivity  {
         finish();
     }
 
+    private void addUserData(){
+        Map<String, Object> user = new HashMap<>();
+        user.put("first", "Ada");
+        user.put("last", "Lovelace");
+        user.put("born", 1815);
+
+        db.collection("users")
+                .add(user).
+                addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(MainActivity.this,"Successfully added", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this,"Mission failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
 
 }
