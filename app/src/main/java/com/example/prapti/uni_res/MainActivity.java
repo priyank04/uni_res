@@ -38,9 +38,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity  {
 
     private static final int RC_SIGN_IN = 1;
-
     private static final String TAG = "Uni_Res";
-
     GoogleSignInClient mGoogleSignInClient;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -50,7 +48,6 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -92,9 +89,7 @@ public class MainActivity extends AppCompatActivity  {
             //Getting the GoogleSignIn Task
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 Toast.makeText(MainActivity.this,"Failed in OnActivityResult", Toast.LENGTH_SHORT).show();
@@ -118,6 +113,7 @@ public class MainActivity extends AppCompatActivity  {
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             Toast.makeText(MainActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            addUserData();
                             gotoProfile();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -137,7 +133,7 @@ public class MainActivity extends AppCompatActivity  {
     //this method is called on click
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        addUserData();
+//        addUserData();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     private void gotoProfile(){
@@ -149,15 +145,13 @@ public class MainActivity extends AppCompatActivity  {
 
     private void addUserData(){
         Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
+        user.put("name", mAuth.getCurrentUser().getDisplayName());
 
-        db.collection("users")
-                .add(user).
-                addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+
+        db.collection("users").document(mAuth.getCurrentUser().getEmail()).set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
+                    public void onSuccess(Void aVoid) {
                         Toast.makeText(MainActivity.this,"Successfully added", Toast.LENGTH_SHORT).show();
                     }
                 })
