@@ -8,41 +8,64 @@
     tools:context=".HomeActivity"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@drawable/bgapps">
+    >
+
 
     <RelativeLayout
+        android:layout_weight="2.5"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.5">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            />
-
-        <TextView
-            android:id="@+id/textViewName"
-            android:layout_width="wrap_content"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:background="@drawable/gradientbackground"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView"
-            android:textColor="@android:color/white"
-            android:textSize="34sp" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/logo_white"
+
+                android:id="@+id/profile_img"/>
+
+            <TextView
+                android:id="@+id/welcome_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="93dp"
+                android:layout_alignParentTop="true"
+                android:text="@string/welcome_"
+                android:textAppearance="@style/welcome_"
+                android:lineSpacingExtra="0sp"
+                android:gravity="top"
+
+                />
 
 
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewName"
-            android:layout_centerHorizontal="true"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="228dp"
+                android:layout_height="49dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="93dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="0sp"
+                android:textColor=" #ffffff"
+                android:text="Name"
+
+                android:textSize="25sp" />
+
+
+
+
+
+        </LinearLayout>
+        <!--insert card view part here-->
 
     </RelativeLayout>
+
 
 
     <GridLayout
@@ -52,8 +75,92 @@
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_width="match_parent"
+        android:background="#ffff"
         android:layout_height="0dp"
         android:padding="14dp">
+
+
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/schedule_green"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/schedule"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schedule"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                />
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/book_green"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/book_now"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BookNow"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
 
@@ -64,28 +171,29 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
                 >
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/schedule"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/occupancy_green"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/schedule"/>
+                    android:id="@+id/occupancy"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Schedule"
+                    android:text="Occupancy"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     />
 
@@ -104,27 +212,27 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
                 >
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/book"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/find_green"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/booknow"/>
+                    android:id="@+id/find"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BookNow"
+                    android:text="Find"
                     android:textAlignment="center"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black"
@@ -145,28 +253,30 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
                 >
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/vacant_engaged"
+
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/contactus_green"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/occupancy"/>
+                    android:id="@+id/contact"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Occupancies"
+                    android:text="Contact Us"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     />
 
@@ -185,12 +295,12 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
@@ -198,87 +308,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/find"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/find"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Find"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
-
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/contactus"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/AboutUs"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AboutUs"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    />
-
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/logout"
+                    android:src="@drawable/logout_green"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/logout_btn"/>
 
@@ -287,6 +317,7 @@
                     android:layout_height="wrap_content"
                     android:text="Logout"
                     android:textAlignment="center"
+                    android:layout_gravity="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
@@ -299,8 +330,353 @@
 
 
 
-
-
     </GridLayout>
+
+
+
+
+  <!--  <View
+        android:id="@+id/image"
+        android:layout_width="101dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/schedule_green"
+        />
+    <TextView
+        android:id="@+id/schedule"
+        android:layout_width="147dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/schedule"
+        android:textAppearance="@style/schedule"
+        android:lineSpacingExtra="20sp"
+        android:translationY="-9.92sp"
+        android:gravity="center_horizontal|top"
+        />
+
+    <View
+        android:id="@+id/logout"
+        android:layout_width="101dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/logout_green"
+        />
+    <TextView
+        android:id="@+id/logout_btn"
+        android:layout_width="147dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/schedule"
+        android:textAppearance="@style/schedule"
+        android:lineSpacingExtra="20sp"
+        android:translationY="-9.92sp"
+        android:gravity="center_horizontal|top"
+        />
+
+
+   <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="2.5">
+
+          <ImageView
+              android:id="@+id/imageView"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              />
+
+          <TextView
+              android:id="@+id/textViewName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_below="@+id/imageView"
+              android:textColor="@android:color/white"
+              android:textSize="34sp" />
+
+
+          <TextView
+              android:id="@+id/textViewEmail"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/textViewName"
+              android:layout_centerHorizontal="true"
+              android:textColor="@android:color/white"
+              android:textSize="14sp" />
+
+      </RelativeLayout>
+
+
+      <GridLayout
+          android:columnCount="2"
+          android:rowCount="3"
+          android:layout_weight="7.5"
+          android:alignmentMode="alignMargins"
+          android:columnOrderPreserved="false"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:padding="14dp">
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="80dp"
+                      android:layout_height="80dp"
+                      android:src="@drawable/schedule"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/schedule"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Schedule"
+                      android:textAlignment="center"
+                      android:textSize="18sp"
+                      />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="80dp"
+                      android:layout_height="80dp"
+                      android:src="@drawable/book"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/booknow"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="BookNow"
+                      android:textAlignment="center"
+                      android:layout_gravity="center"
+                      android:textColor="@android:color/black"
+                      android:textSize="18sp" />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="70dp"
+                      android:layout_height="70dp"
+                      android:src="@drawable/vacant_engaged"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/occupancy"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Occupancies"
+                      android:textAlignment="center"
+                      android:textSize="18sp"
+                      />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="60dp"
+                      android:layout_height="60dp"
+                      android:src="@drawable/find"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/find"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Find"
+                      android:textAlignment="center"
+                      android:textColor="@android:color/black"
+                      android:textSize="18sp" />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="70dp"
+                      android:layout_height="70dp"
+                      android:src="@drawable/contactus"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/AboutUs"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="AboutUs"
+                      android:textAlignment="center"
+                      android:textSize="18sp"
+                      />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_columnWeight="1"
+              android:layout_rowWeight="1"
+              android:layout_marginBottom="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              app:cardElevation="8dp"
+              app:cardCornerRadius="8dp">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal|center_vertical"
+                  android:layout_margin="16dp"
+                  android:orientation="vertical"
+                  >
+                  <ImageView
+                      android:layout_width="70dp"
+                      android:layout_height="70dp"
+                      android:src="@drawable/logout"
+                      android:layout_gravity="center_horizontal"
+                      android:id="@+id/logout_btn"/>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Logout"
+                      android:textAlignment="center"
+                      android:textColor="@android:color/black"
+                      android:textSize="18sp" />
+
+
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+
+
+
+
+
+      </GridLayout>-->
 
 </LinearLayout>

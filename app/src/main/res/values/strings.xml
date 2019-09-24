@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">uni_res</string>
     <string name="web_client_id">xxxxxxxx..place your web client id here</string>
+    <string name="university_">UNIVERSITY RESOURCE MANAGEMENT</string>
+    <string name="welcome_">Welcome!!</string>
+    <string name="sign_in_wit">SIGN IN WITH GOOGLE</string>
+    <string name="schedule">Schedule</string>
+    <string name="book_now">Book Now</string>
+    <string name="book_slot">Book Slot</string>
+    <string name="select_date">Select Date :</string>
+    <string name="time_slot">Time Slot :</string>
+    <string name="department">Department :</string>
+    <string name="room_no">Room No :</string>
+    <string name="description">Description :</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
 

@@ -1,5 +1,6 @@
 package com.example.prapti.uni_res;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -29,13 +30,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity   {
 
-    ImageView logout_btn;
-    ImageView imageView;
+    ImageView logout_btn , occupancies , profile_img , booknow , contact_us;
+
     TextView textName, textEmail;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +45,13 @@ public class HomeActivity extends AppCompatActivity   {
 
         mAuth = FirebaseAuth.getInstance();
 
-        imageView = findViewById(R.id.imageView);
+        profile_img = findViewById(R.id.profile_img);
         textName = findViewById(R.id.textViewName);
-        textEmail = findViewById(R.id.textViewEmail);
+        occupancies = findViewById(R.id.occupancy);
+       // textEmail = findViewById(R.id.textViewEmail);
         logout_btn = findViewById(R.id.logout_btn);
-
+        booknow = findViewById(R.id.book_now);
+        contact_us= findViewById(R.id.contact);
 
         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -58,12 +62,12 @@ public class HomeActivity extends AppCompatActivity   {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        Glide.with(this)
+       Glide.with(this)
                 .load(user.getPhotoUrl())
-                .into(imageView);
+                .into(profile_img);
 
         textName.setText(user.getDisplayName());
-        textEmail.setText(user.getEmail());
+       // textEmail.setText(user.getEmail());
 
         logout_btn.setOnClickListener(new  View.OnClickListener(){
 
@@ -78,6 +82,37 @@ public class HomeActivity extends AppCompatActivity   {
                 }
             }
         });
+        occupancies.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, choose_Department.class);
+                startActivity(intent);
+            }
+        });
+
+        booknow.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, Book_now.class);
+                startActivity(intent);
+            }
+        });
+
+
+        contact_us.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, contact_us.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
     @Override
