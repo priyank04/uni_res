@@ -15,7 +15,7 @@
         </item>
         
         <item name="android:textColor">
-            #21824A
+            #2f3887
         </item>
 
     </style>
@@ -84,7 +84,7 @@
             #03401C
         </item>
     </style>
-
+`
     <!--select time -->
     <style name="time_slot">
         <item name="android:textSize">

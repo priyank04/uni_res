@@ -64,20 +64,21 @@
         android:background="#ffffff"
         android:orientation="vertical"
         >
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cspit"
-            android:layout_gravity="center"
-            android:id="@+id/cspit"
-            />
-        <ImageView
+            android:id="@+id/depstar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:src="@drawable/depstar"
             android:layout_gravity="center"
-            android:id="@+id/depstar"
+            android:src="@drawable/depstar" />
+
+        <ImageView
+            android:id="@+id/cspit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/cspit"
             />
     </LinearLayout>
     </RelativeLayout>

@@ -13,9 +13,10 @@
         android:id="@+id/image"
         android:layout_width="385dp"
         android:layout_height="250dp"
+        android:maxWidth="84dp"
+        android:maxHeight="42dp"
         android:layout_alignParentTop="true"
-
-        android:background="@drawable/uni_image1" />
+        android:background="@drawable/logo" />
 
     <TextView
         android:id="@+id/university_"
@@ -23,39 +24,34 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-
         android:layout_below="@+id/image"
+        android:layout_marginTop="35dp"
         android:gravity="center"
         android:text="@string/university_"
-        android:textAppearance="@style/university_"
+        android:textAppearance="@style/university_" />
+    <!--<View-->
+        <!--android:id="@+id/sign_in_btn1"-->
+        <!--android:layout_width="92dp"-->
+        <!--android:layout_height="92dp"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_below="@+id/university_"-->
+        <!--android:layout_gravity="center"-->
 
-        />
+        <!--android:layout_marginTop="26dp"-->
+        <!--android:-->
+        <!--android:background="@drawable/google_login" />-->
 
-    <View
-        android:id="@+id/sign_in_btn1"
-        android:layout_width="114dp"
-        android:layout_height="114dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="26dp"
-       android:layout_gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_below="@+id/university_"
-        android:background="@drawable/google"
-        />
-
-    <TextView
+    <com.shobhitpuri.custombuttons.GoogleSignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-       android:layout_gravity="center"
-        android:layout_alignParentTop="true"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:gravity="center_horizontal|top"
         android:text="@string/sign_in_wit"
         android:textAppearance="@style/sign_in_wit"
-        android:gravity="center_horizontal|top"
-        />
+        app:isDarkTheme="true" />
 
 
 
